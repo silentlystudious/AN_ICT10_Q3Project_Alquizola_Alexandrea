@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- BOOTSTRAP CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <!-- EXTERNAL CSS -->
+    <link rel="stylesheet" type="text/css" href="teams.css">
+    <title>OBMC Intramurals Site</title>
+</head>
+
+<body>
+    <!-- NAVIGATION -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a href="index.html" class="navbar-brand" target="_self" class="mt-4"
+                style="font-size: 15px; font-weight: bold">
+                <img class="img-responsive" src="logo.png" style="max-width: 50px; margin-right: 10px">OBMC Intramurals Page 
+            </a>
+
+            <button class="navbar-toggler" type="button" aria-controls="navbarNav" aria-expanded="false"
+                data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav navbar-center ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="signup.html" target="_self">🌐 SIGN UP</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="teams.html" target="_self">🎯 TEAMS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="players.html" target="_self">📌 PLAYERS</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav navbar-center navbar-expand-lg ms-auto">
+                    <div class="navbar-search">
+                        <input type="search" placeholder="Search for..." name="search">
+                        <button>Input</button>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br>
+
+    <!-- ALERT BUTTONS -->
+    <div class="container-fluid mt-1 mb-3 alert alert-success alert-dismissible fade show" role="alert"
+        style="text-align: center; font-weight: 400; max-width: 95%;">Please wait for five seconds before clicking on the button. Additionally, 
+        make sure to input all information before clicking the button. <strong>Otherwise, it will display an error.</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <div class="container-fluid mt-1 mb-3 alert alert-primary alert-dismissible fade show" role="alert"
+        style="text-align: center; font-weight: 400; max-width: 95%;"><strong>Photos for the teams take a while to load with Python.</strong> 
+            Please be patient with the loading of each team logo once you submit your team. Thank you!
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <!-- TEAM CHECKER -->
+    <div class="container mt-3 mb-6">
+        <h2 class="mt-3">Team Checker!</h2>
+        <div class="form-group registration">
+            <label>Are you done with the registration?</label><br>
+            <input type="radio" name="reg" id="regYes" value="yes"><label for="regYes">Yes</label>
+            <input type="radio" name="reg" id="regNo" value="no"><label for="regNo">No</label>
+        </div>
+        <br>
+        <div class="form-group clearance">
+            <label>Did you secure a medical clearance?</label><br>
+            <input type="radio" name="clr" id="clrYes" value="yes"><label for="clrYes">Yes</label>
+            <input type="radio" name="clr" id="clrNo" value="no"><label for="clrNo">No</label>
+        </div>
+        <br>
+        <div class="form-group level">
+            <label>What is your grade level?</label><br>
+            <select id="level" class="level">
+                <option value="7">Grade 7</option>
+                <option value="8">Grade 8</option>
+                <option value="9">Grade 9</option>
+                <option value="10">Grade 10</option>
+                <option value="11">Grade 11</option>
+                <option value="12">Grade 12</option>
+            </select>
+        </div>
+        <br>
+        <div class="form-group section">
+            <label>What is your section?</label><br>
+            <select id="section" class="section">
+                <option value="Emerald">Emerald</option>
+                <option value="Ruby">Ruby</option>
+                <option value="Amorsolo">Amorsolo</option>
+                <option value="Luna">Luna</option>
+                <option value="Jose">Jose</option>
+                <option value="Tinio">Tinio</option>
+            </select>
+        </div>
+        <br>
+        <button py-click="team_checker" class="btn" id="submit">Check My Team!</button>
+        <br><br>
+        <div id="display"></div>
+        <div id="image_container">
+            <img id="team_img" src="" style="display: none; margin: 20px auto; max-height: 250px; width: auto; border-radius: 10px">
+        </div>
+    </div>
+
+    <!-- PYTHON SCRIPT -->
+    <script type="py" src="teams.py"></script>
+</body>
+</html>
