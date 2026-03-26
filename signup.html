@@ -64,14 +64,17 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 
-    <!-- HEADER -->
-    <div class="container mt-3 mb-6">
-        <h2 class="mb-3">Intramurals Players!</h2>
-        <button py-click="classmate_loop" class="btn" id="btn">Click Here!</button><br>
-        <ol id="obmc_class" class="list-group-numbered"></ol>
+    <!-- CREATE ACCOUNT -->
+    <div class="container mt-5 mb-6">
+        <h2 class="mt-2 mb-2">Create An Account!</h2>
+        <input class="mt-2 mb-2" type="text" name="username" id="username" placeholder="Enter your username..."><br>
+        <input class="mt-2 mb-2" type="email" name="email" id="email" placeholder="Enter your email..."><br>
+        <input class="mt-2 mb-2" type="password" name="password" id="password" placeholder="Enter an 8-digit password..."><br>
+        <button class="btn mt-2 mb-2" py-click="create_username" id="btn">Click Here!</button>
+        <div class="msg mt-2 mb-2" id="msg"></div>
     </div>
-
+    
     <!-- PYTHON SCRIPT -->
-    <script type="py" src="players.py"></script>
+    <script type="py" src="signup.py"></script>
 </body>
 </html>
